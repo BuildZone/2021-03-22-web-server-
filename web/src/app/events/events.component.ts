@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
 import { EventService } from '../event.service';
 import { AuthService } from '../auth.service';
 import { FormBuilder , FormGroup } from '@angular/forms';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-events',
@@ -18,8 +19,9 @@ export class EventsComponent implements OnInit {
   TeacherDataForm : FormGroup;
   submitted = false;
   success = false;
+  isShow = true;
 
-  constructor(private _eventService : EventService, public _authservice : AuthService) { }
+  constructor(private _eventService : EventService, public _authservice : AuthService, @Inject(DOCUMENT) private _document: Document) { }
 
   ngOnInit(): void {
 
@@ -42,10 +44,19 @@ export class EventsComponent implements OnInit {
     )
   }
 
+  toggleDisplay(){
+    this.isShow=!this.isShow;
+  }
 
+  refreshPage() {
+    this._document.defaultView.location.reload();
+  }
+  
+ 
+  
   // registerUser(){
 
-
+  
   //   this._auth.registerUser(this.registerUserData)
   //   .subscribe(
   //     res => {
@@ -54,7 +65,7 @@ export class EventsComponent implements OnInit {
   //       this._router.navigate(['/special'])
   //     },
   //     err => console.log(err)
-
+      
   //   )
   // }
 

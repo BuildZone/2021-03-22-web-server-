@@ -9,32 +9,14 @@
           <button type="button" class="btn btn-light">
             <span class="glyphicon glyphicon-search"></span> Search
           </button>
-
+        
 
         </form>
       </div>
 
-<button type="button" class="btn btn-success">Add Teacher</button>
+<button *ngIf="_authservice.loggedIn()" type="button" class="btn btn-success" (click)=toggleDisplay()>Add Teacher</button>
 
-<div class="row mt-5">
-  <div class="col-md-4 mb-3" *ngFor="let event of events">
-    <div class="card text-center">
-      <div class="card-body">
-        <h5 class="card-title">{{event.name}}</h5>
-        <p class="card-text">{{event.description}}</p>
-        <p class="card-text">{{event.Subject}}</p>
-        <a href="#" class="btn btn-primary">Contact</a>
-      </div>
-      <div class="card-footer text-muted">
-        {{event.area}}
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<br><br><br>
-<div>
+<div [hidden]="isShow">
 <h2>New Teacher</h2>
 <form #form="ngForm" class="well">
   <div class="form-group">
@@ -72,7 +54,7 @@
     <input [(ngModel)]="InsertedTeacherData.description" #name="ngModel" name="descrition" type="text" class="form-control rounded-0" placeholder="Enter Description">
   </div>
 
-  <button type="submit" (click)="postTeacher()" class="btn btn-success" ngModel> Save </button> &nbsp;
+  <button type="submit" (click)="postTeacher()" (click)="refreshPage()"class="btn btn-success" ngModel> Save </button> &nbsp;
   <button type="reset" class="btn btn-light"> Clear </button>
 
 </form>
@@ -80,4 +62,28 @@
 
 
 <br><br><br>
+
+
+
+
+
+<div class="row mt-5">
+  <div class="col-md-4 mb-3" *ngFor="let event of events">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title">{{event.name}}</h5>
+        <p class="card-text">{{event.description}}</p>
+        <p class="card-text">{{event.Subject}}</p>
+        <a href="#" class="btn btn-primary">Contact</a>
+      </div>
+      <div class="card-footer text-muted">
+        {{event.area}}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<br><br><br>
+
 
