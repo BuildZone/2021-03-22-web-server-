@@ -1,0 +1,91 @@
+.margin-left{
+  margin-left: 80px !important;
+}
+
+.container{
+
+  background-color: rgb(184, 49, 150);
+}
+.img6{
+
+  background-size: cover;
+background-color: rgb(15, 48, 92);
+height: 200px;
+
+  width: 339px;
+
+}
+.img7{
+
+
+  background-size: cover;
+background-color: brown;
+height: 200px;
+
+  width: 339px;
+
+}
+.img8{
+
+  background-size: cover;
+background-color: rgb(12, 71, 10);
+height: 200px;
+
+  width: 339px;
+
+}
+
+.img9{
+
+  background-size: cover;
+background-color: rgb(71, 12, 61);
+height: 200px;
+
+  width: 339px;
+
+}
+.img10{
+
+
+  background-size: cover;
+background-color: rgb(78, 95, 18);
+height: 200px;
+
+  width: 339px;
+
+}
+.img11{
+
+
+  background-size: cover;
+background-color: rgb(88, 15, 15);
+height: 200px;
+
+  width: 339px;
+
+}
+
+
+
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+
+
+  font-size: 12px;
+  text-align: center;
+}
+
+.card-data {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.mycontent-left {
+  border-right: 1px dashed #333;
+};
+
+

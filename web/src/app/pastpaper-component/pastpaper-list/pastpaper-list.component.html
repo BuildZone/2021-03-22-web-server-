@@ -1,0 +1,68 @@
+<!--
+<br>
+<br>
+<div class="btn-toolbar">
+<button  (click)="onSelect(pastpaper)" *ngFor="let pastpaper of pastpapers" class="btn btn-outline-primary" type="submit"><a>{{pastpaper.name}}</a></button>
+
+</div>
+-->
+
+
+<table class="table table-bordered">
+  <thead class="thead-white">
+
+
+
+
+<th style="width:180px">Lesson </th>
+
+<th style="width:200px">Paper </th>
+<th style="width:200px">paper path </th>
+
+<th  *ngIf="!_authservice.loggedIn()" style="width:200px">Delete</th>
+<th  *ngIf="!_authservice.loggedIn()" style="width:200px">Chose Grade</th>
+<th  *ngIf="!_authservice.loggedIn()" style="width:200px">Upload</th>
+  </thead>
+
+
+  <tbody >
+      <tr style="width:200px" *ngFor="let pastpaper of pastpapers; let i = index">
+
+
+
+
+
+        <td  style="width:250px ;color:rgb(124, 32, 32);" ><b>{{pastpaper.name}}</b></td>
+
+        <td  style="width:250px ;color:rgb(124, 32, 32);" ><b>{{pastpaper.paperPath}}</b></td>
+        <td>
+          <button  (click)="onSelect(pastpaper)"  type="button" class="btn btn-primary">PAPER</button>
+        </td>
+
+        <td>
+          <button  type="button" (click)="deletePaper(pastpaper._id)"  *ngIf="!_authservice.loggedIn()" class="btn btn-danger">Delete</button>
+        </td>
+        <td>
+
+          <div class="tab">
+
+            <button class="btn btn-primary btn-sm" (click)="onTabClick(1)"> 06</button>
+            <button class="btn btn-secondary btn-sm" (click)="onTabClick(2)"> 07</button>
+            <button class="btn btn-success btn-sm" (click)="onTabClick(3)"> 08</button>
+            <button class="btn btn-danger btn-sm" (click)="onTabClick(4)"> 09</button>
+            <button class="btn btn-warning btn-sm" (click)="onTabClick(5)"> 10</button>
+            <button class="btn btn-dark btn-sm" (click)="onTabClick(6)"> 11</button>
+          </div>
+</td>
+
+          <app-paperupload06 *ngIf="tabIndex === 1"> </app-paperupload06>
+          <app-paperupload07 *ngIf="tabIndex === 2"> </app-paperupload07>
+          <app-paperupload08 *ngIf="tabIndex === 3"> </app-paperupload08>
+          <app-paperupload09 *ngIf="tabIndex === 4"> </app-paperupload09>
+          <app-paperupload10 *ngIf="tabIndex === 5"> </app-paperupload10>
+          <app-paperupload11 *ngIf="tabIndex === 6"> </app-paperupload11>
+
+</tr>
+  </tbody>
+
+

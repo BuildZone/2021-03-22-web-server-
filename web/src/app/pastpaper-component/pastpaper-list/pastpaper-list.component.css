@@ -1,0 +1,91 @@
+.margin-left{
+  margin-left: 80px !important;
+}
+
+
+.img6{
+  background-image: url('src/assets/Grade-06.jpg');
+
+  background-size: cover;
+background-color: brown;
+height: 200px;
+
+  width: 300px;
+
+}
+.img7{
+  background-image: url('src/assets/Grade-07.jpg');
+
+  background-size: cover;
+background-color: brown;
+height: 200px;
+
+  width: 300px;
+
+}
+.img8{
+  background-image: url('src/assets/Grade-08.jpg');
+
+  background-size: cover;
+background-color: brown;
+height: 200px;
+
+  width: 300px;
+
+}
+
+.img9{
+  background-image: url('src/assets/grade-9.jpg');
+
+  background-size: cover;
+background-color: brown;
+height: 200px;
+
+  width: 300px;
+
+}
+.img10{
+  background-image: url('src/assets/Grade-10.jpg');
+
+  background-size: cover;
+background-color: brown;
+height: 200px;
+
+  width: 300px;
+
+}
+.img11{
+  background-image: url('src/assets/Grade-11.jpg');
+
+  background-size: cover;
+background-color: brown;
+height: 200px;
+
+  width: 300px;
+
+}
+
+
+
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+
+
+  font-size: 12px;
+  text-align: center;
+}
+
+.card-data {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.mycontent-left {
+  border-right: 1px dashed #333;
+};
+
+

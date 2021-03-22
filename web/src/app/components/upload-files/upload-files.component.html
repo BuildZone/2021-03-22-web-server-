@@ -1,0 +1,26 @@
+
+        <table class="table table-striped">
+          <thead class="thead-dark">
+
+                  <th scope="col">#</th>
+                  <th scope="col">name</th>
+                  <th scope="col">Link</th>
+                  <th scope="col">Advertisment</th>
+                  <th scope="col">Action</th>
+          </thead>
+          <tbody>
+              <tr  *ngFor="let profiles of profiles; let i = index">
+                  <td>{{i+1}}</td>
+                  <td>{{profiles.name}}</td>
+                  <td>{{profiles.imagePath}}</td>
+                    <img [src]="profiles.imagePath"  width="250" height="250" />
+                  <td>
+                    <button type="button" (click)="deleteAds(profiles._id)"  class="btn btn-danger">Delete</button>
+                    &nbsp;&nbsp;
+
+
+                  </td>
+
+              <tr>
+          </tbody>
+      </table>

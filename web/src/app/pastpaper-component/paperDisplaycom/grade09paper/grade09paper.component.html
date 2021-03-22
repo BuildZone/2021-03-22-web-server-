@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      /* Create two unequal columns that floats next to each other */
+      .column {
+        float: left;
+        padding: 10px;
+        height: 300px; /* Should be removed. Only for demonstration */
+      }
+
+      .left {
+        width: 25%;
+      }
+
+      .right {
+        width: 75%;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="column left">
+        <app-all-profiles></app-all-profiles>
+      </div>
+
+      <div>
+        <div class="card-data">
+          <br />
+          <br />
+          <div class="card" *ngFor="let paper of Pastpaper">
+            <div class="card" style="width: 25rem; height: 12rem">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <h4 style="color: rgb(37, 35, 35)">{{ paper.name }}</h4>
+                </h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+                <a [href]="paper.paperPath" download="file.txt"
+                  >Click for paper</a
+                >
+                <button
+                  type="button"
+                  (click)="deleteGrade09(paper._id)"
+                  class="btn btn-danger"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

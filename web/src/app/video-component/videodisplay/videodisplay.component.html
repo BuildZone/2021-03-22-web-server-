@@ -1,0 +1,110 @@
+<!--<p>videodisplay works!</p>
+<button   *ngFor="let video of videos" class="btn btn-outline-primary" type="submit"><a>{{video.subjectname}}</a></button>
+<video source [src]="task.videoPath |safe "class="embed-responsive-item"  type="video/mp4" width="200" height="100" controls></video>
+-->
+
+
+
+
+<!--
+<td>
+  <br>
+  <br>
+  <br>
+  <br>
+ <h1> {{task.videoname}}</h1>
+</td>
+
+
+
+<head>
+
+  <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+  <script src="http://media.mq.edu.au/mas240/js/gallery.js"></script>
+
+  </head>
+
+  <section>
+
+    <div *ngFor="let task of videos" >
+
+
+
+        <video source [src]="task.videoPath |safe "class="embed-responsive-item" class="gallery" type="video/mp4" width="300" height="200" controls></video>
+
+
+      </div>
+
+    </section>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create two unequal columns that floats next to each other */
+    .column {
+      float: left;
+      padding: 10px;
+      height: 300px; /* Should be removed. Only for demonstration */
+    }
+
+    .left {
+      width: 25%;
+    }
+
+    .right {
+      width: 75%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+    </style>
+    </head>
+    <body>
+
+
+
+    <div class="row">
+      <div class="column left">
+       <app-all-profiles></app-all-profiles>
+
+      </div>
+      <div class="column right">
+        <div>
+          <div class="card-data" >
+            <div class="card" *ngFor="let task of videos">
+              <video  source [src]="task.videoPath |safe "class="embed-responsive-item" class="gallery" type="video/mp4" width="300" height="250" controls></video>
+
+              <h3> {{task.videoname}}</h3>
+              <h4 style="color: rgb(37, 35, 35);"> {{task.subjectname}}</h4>
+              <button type="button" (click)="deleteVideo(task._id)" class="btn btn-danger">Delete</button>
+          </div>
+      </div>  </div>
+    </div>  </div>
+    </body>
+    </html>
+
+
